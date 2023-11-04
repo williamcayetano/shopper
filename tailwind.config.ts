@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+const colors = require('tailwindcss/colors')
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,12 +10,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        ...colors
       },
+      container: {
+        center: true,
+        padding: "15px"
+      }
     },
+
+    colors: {
+      accent: "#FF8F9C",
+      blackish: "#1b1b1b",
+    }
   },
   plugins: [],
 }
